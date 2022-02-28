@@ -39,7 +39,7 @@ console.log(fullForm);
 this.reset();
 }
  listMood(moods, record);
- localStorage.setItem("moods", JSON.stringify(moods));
+ 
  
 }
 
@@ -57,7 +57,7 @@ function emojiSelect () {
 
 for (let i=0; i<emojis.length; i++) {
     emojis[i].addEventListener("click", emojiSelect);
-    localStorage.setItem("moods", JSON.stringify(moods));
+    
 }
 
 
@@ -86,7 +86,7 @@ else {
         setTimeout(() => popupShow.classList.add('hide'), 3000);
 
     }
-    localStorage.setItem("moods", JSON.stringify(moods));
+    
 }
 
 // event listeners
