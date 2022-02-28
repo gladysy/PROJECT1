@@ -22,7 +22,7 @@ window.onload = function () {
     record.innerHTML = moods.map((fullForm, i) => {
         return `<li>
         <h4> ${todayDate}  </h4>     
-        <span data-index=${i}> ${fullForm.reaction.toUpperCase()} </span> <span data-index=${i}> - </span> <span data-index=${i}>   ${fullForm.textForm} </span> 
+        <span data-index=${i}> ${fullForm.reaction.toUpperCase()} </span>  <span data-index=${i}>   ${fullForm.textForm} </span> 
         
              ` 
       }).join("");
@@ -56,7 +56,7 @@ this.reset();
     record.innerHTML = moods.map((fullForm, i) => {
       return `<li>
       <h4> ${todayDate}  </h4>     
-      <span data-index=${i}> ${fullForm.reaction.toUpperCase()} </span> <span data-index=${i}> - </span> <span data-index=${i}>   ${fullForm.textForm} </span> 
+      <span data-index=${i}> ${fullForm.reaction.toUpperCase()} </span>  <span data-index=${i}>   ${fullForm.textForm} </span> 
       
            ` 
     }).join("");
