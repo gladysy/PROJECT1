@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css"/>
+    <title>Mood Diary</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1>HOW ARE YOU FEELING NOW?</h1>
+        <img src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/344/external-calendar-essentials-pack-tanah-basah-glyph-tanah-basah-2.png" width="15" height="15"/>
+        <span id="dateString"></span>
+        <p id="timeClock"></p>
+        
+        <div class="emotions" name="emoticons">
+            <div class="popup">Please pick an emotion</div>
+            
+            <img src="img/Screenshot (669).png" class="emoji" data-reaction="happy" alt="happy face" width="100" height="100"/>
+            <img src="img/Screenshot (670).png" class="emoji" data-reaction="neutral" alt="neutral face" width="100" height="100"/>
+            <img src="img/Screenshot (671).png" class="emoji" data-reaction="sad" alt="sad face" width="100" height="100"/>
+            <img src="img/Screenshot (672).png" class="emoji" data-reaction="worried" alt="worried face" width="100" height="100"/>
+            <img src="img/Screenshot (674).png" class="emoji" data-reaction="angry" alt="angry face" width="100" height="100"/>
+
+        </div>
+        <form class="add-text" name="text-form">
+            <input class="enter-text text" type="text" name="text" placeholder="What's going on?" required/>
+            <div><input type="submit" class="enter-text btn" id="btn" value="Add Entry"/></div>
+        </form>
+
+        <ul class="history-record">
+            <li class="recorded">  </li>   
+            
+        </ul>
+        </div>
+    </div>
+    
+<script src="index.js"></script>
+</body>
+</html>
