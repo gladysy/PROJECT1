@@ -74,10 +74,6 @@ this.reset();
         }
 
 
-
-
-
-
  //listMood(moods, record);
  localStorage.setItem('moods', JSON.stringify(moods));
 
