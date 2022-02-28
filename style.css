@@ -107,7 +107,7 @@ outline: none;
 
 
 
-
+/*
 button {
     cursor:pointer; 
     display:inline-block;
@@ -128,7 +128,7 @@ transition: all 0.2s;
 button:hover{
     background-color:#e93080;
     }
-
+*/
 
 /*h4 {
     padding-right: 30px;

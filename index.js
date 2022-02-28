@@ -23,7 +23,7 @@ window.onload = function () {
         return `<li>
         <h4> ${todayDate}  </h4>     
         <span data-index=${i}> ${fullForm.reaction.toUpperCase()} </span> <span data-index=${i}> - </span> <span data-index=${i}>   ${fullForm.textForm} </span> 
-             <button class="delete" data-index=${i} id="delete${i}">Delete</button>
+        
              ` 
       }).join("");
 }
@@ -57,7 +57,7 @@ this.reset();
       return `<li>
       <h4> ${todayDate}  </h4>     
       <span data-index=${i}> ${fullForm.reaction.toUpperCase()} </span> <span data-index=${i}> - </span> <span data-index=${i}>   ${fullForm.textForm} </span> 
-      <button class="delete" data-index=${i} id="delete${i}">Delete</button>
+      
            ` 
     }).join("");
     
@@ -73,13 +73,18 @@ this.reset();
     
         }
 
+
+
+
+
+
  //listMood(moods, record);
  localStorage.setItem('moods', JSON.stringify(moods));
 
  
 }
 
-
+/////////////////////////////////////////////////////////
 function emojiSelect () {
     reaction = this.getAttribute("data-reaction");
     let prev = document.getElementsByClassName("selected")[0];
