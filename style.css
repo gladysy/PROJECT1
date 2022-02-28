@@ -107,7 +107,7 @@ outline: none;
 
 
 
-/*
+
 button {
     cursor:pointer; 
     display:inline-block;
@@ -129,7 +129,6 @@ button:hover{
     background-color:#e93080;
     }
 
-*/
 
 /*h4 {
     padding-right: 30px;
@@ -182,8 +181,8 @@ ul, ul li {
   }
 
 
-  .popup.hide {
-      display: none; 
+ /* .popup.hide {
+      visibility:hidden;
   }
-
+*/
 

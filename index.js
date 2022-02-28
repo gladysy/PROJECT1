@@ -13,9 +13,21 @@ let timeClock = document.getElementById("timeClock");
 
 let todayDate = new Date().toDateString();
 dateString.textContent = `${todayDate}`
+//let dateTime = new Date().toLocaleString();
 
 let reaction = null;
-let moods = []; 
+let moods = JSON.parse(localStorage.getItem("moods")) || []; 
+window.onload = function () {
+    JSON.parse(localStorage.getItem("moods"));
+    record.innerHTML = moods.map((fullForm, i) => {
+        return `<li>
+        <h4> ${todayDate}  </h4>     
+        <span data-index=${i}> ${fullForm.reaction.toUpperCase()} </span> <span data-index=${i}> - </span> <span data-index=${i}>   ${fullForm.textForm} </span> 
+             <button class="delete" data-index=${i} id="delete${i}">Delete</button>
+             ` 
+      }).join("");
+}
+
 
 
 //functions
@@ -26,6 +38,7 @@ console.log(textForm);
 
 
 let fullForm = {
+    todayDate: todayDate,
     reaction: reaction,
     textForm: textForm,
 };
@@ -38,8 +51,31 @@ moods.push(fullForm);
 console.log(fullForm);
 this.reset();
 }
- listMood(moods, record);
- 
+
+    if (previ) {
+    record.innerHTML = moods.map((fullForm, i) => {
+      return `<li>
+      <h4> ${todayDate}  </h4>     
+      <span data-index=${i}> ${fullForm.reaction.toUpperCase()} </span> <span data-index=${i}> - </span> <span data-index=${i}>   ${fullForm.textForm} </span> 
+      <button class="delete" data-index=${i} id="delete${i}">Delete</button>
+           ` 
+    }).join("");
+    
+    previ.classList.remove("selected");
+    }
+    
+    else {
+        console.log("working")
+            let popupShow = document.getElementsByClassName("popup")[0];
+            popupShow.classList.add("showing");
+    
+            setTimeout(() => popupShow.classList.remove('showing'), 3000);
+    
+        }
+
+ //listMood(moods, record);
+ localStorage.setItem('moods', JSON.stringify(moods));
+
  
 }
 
@@ -61,36 +97,13 @@ for (let i=0; i<emojis.length; i++) {
 }
 
 
-function listMood (fullForm = [], record) {
-
-let dateTime = new Date().toLocaleString();
-let previ = document.getElementsByClassName("selected")[0];
-
-if (previ) {
-record.innerHTML = moods.map((fullForm, i) => {
-  return `<li>
-  <h4> ${dateTime}  </h4>     
-  <span data-index=${i}> ${fullForm.reaction.toUpperCase()} </span> <span data-index=${i}> - </span> <span data-index=${i}>   ${fullForm.textForm} </span> 
-       
-       ` 
-}).join("");
-
-previ.classList.remove("selected");
-}
-
-else {
-    console.log("working")
-        let popupShow = document.getElementsByClassName("popup")[0];
-        popupShow.classList.add("showing");
-
-        setTimeout(() => popupShow.classList.add('hide'), 3000);
-
-    }
-    
-}
-
 // event listeners
 formText.addEventListener("submit", addMood);
+
+
+
+
+
 
 
 
