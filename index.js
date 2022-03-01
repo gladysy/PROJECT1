@@ -70,12 +70,10 @@ this.reset();
             popupShow.classList.add("showing");
     
             setTimeout(() => popupShow.classList.remove('showing'), 3000);
-    
         }
 
  //listMood(moods, record);
  localStorage.setItem('moods', JSON.stringify(moods));
-
  
 }
 
