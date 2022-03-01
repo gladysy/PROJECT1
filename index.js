@@ -13,7 +13,7 @@ let timeClock = document.getElementById("timeClock");
 
 let todayDate = new Date().toDateString();
 dateString.textContent = `${todayDate}`
-//let dateTime = new Date().toLocaleString();
+let dateTime = new Date().toLocaleString();
 
 let reaction = null;
 let moods = JSON.parse(localStorage.getItem("moods")) || []; 
@@ -21,7 +21,7 @@ window.onload = function () {
     JSON.parse(localStorage.getItem("moods"));
     record.innerHTML = moods.map((fullForm, i) => {
         return `<li>
-        <h4> ${todayDate}  </h4>     
+        <h4> ${fullForm.dateTime}  </h4>     
         <span data-index=${i}> ${fullForm.reaction.toUpperCase()} </span>  <span data-index=${i}>   ${fullForm.textForm} </span> 
         
              ` 
@@ -38,7 +38,7 @@ console.log(textForm);
 
 
 let fullForm = {
-    todayDate: todayDate,
+    dateTime: dateTime,
     reaction: reaction,
     textForm: textForm,
 };
@@ -55,7 +55,7 @@ this.reset();
     if (previ) {
     record.innerHTML = moods.map((fullForm, i) => {
       return `<li>
-      <h4> ${todayDate}  </h4>     
+      <h4> ${fullForm.dateTime}  </h4>     
       <span data-index=${i}> ${fullForm.reaction.toUpperCase()} </span>  <span data-index=${i}>   ${fullForm.textForm} </span> 
       
            ` 
@@ -72,7 +72,6 @@ this.reset();
             setTimeout(() => popupShow.classList.remove('showing'), 3000);
     
         }
-
 
  //listMood(moods, record);
  localStorage.setItem('moods', JSON.stringify(moods));
